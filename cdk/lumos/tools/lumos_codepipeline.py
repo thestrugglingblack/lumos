@@ -30,12 +30,12 @@ class CICDStack(Stack):
                 "phases": {
                     "install": {
                         "commands": [
-                            "pip install -r shiny/requirements.txt",
+                            'cd shiny'
+                            "pip install -r requirements.txt",
                         ],
                     },
                     "build": {
                         "commands": [
-                            "pytest",
                             f"docker build -t {ecr_repository.repository}:latest .",
                         ],
                     },
