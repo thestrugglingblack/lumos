@@ -30,7 +30,8 @@ class CICDStack(Stack):
                 "phases": {
                     "install": {
                         "commands": [
-                            'cd shiny'
+                            'pwd',
+                            'cd shiny',
                             "pip install -r requirements.txt",
                         ],
                     },
