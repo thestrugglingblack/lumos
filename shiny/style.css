@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Monofett&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+.main {
+    background-color: #FEFBF6 !important;
+}
+
+.navbar.navbar-default  {
+    background-color: #8CB9BD !important;
+}
+.navbar-brand {
+    color: #FEFBF6;
+    font-family: "Monofett", monospace;
+    font-weight: 400;
+    font-size: 50px;
+    font-style: normal;
+}
+
+ul {
+    font-family: "Space Mono", monospace !important;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.navbar-nav .nav-link.active {
+    color: #FEFBF6 !important;
+}
+
+.navbar-nav .nav-link {
+    color: #FEFBF6 !important;
+}
+
+.sidebar {
+    background-color: #ECB159 !important;
+    font-family: "Space Mono", monospace !important;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.data-table-wrapper table {
+        width: 100% !important;
+        margin: 0 auto !important;
+}
+
+.table-title {
+    font-family: 'Space Mono', monospace;
+    color: #B67352;
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.data-table-wrapper table {
+    width: 100%;
+    margin: 0 auto;
+}
+
+th {
+      font-family: 'Space Mono', monospace;
+}
+td{
+    font-family: 'Space Mono', monospace;
+}
+
+ .table {
+    --bs-table-striped-bg: #efeee9 !important;
+}

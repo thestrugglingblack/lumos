@@ -1,0 +1,38 @@
+harrypottermoviedataseet.zip
+# Ignore Python virtual environments
+cdk/.venv/
+cdk/*.swp
+cdk/package-lock.json
+cdk/__pycache__
+cdk/.pytest_cache
+
+cdk/*.egg-info
+
+# CDK asset staging directory
+cdk/.cdk.staging
+cdk/cdk.out
+
+
+venv/
+*.pyc
+
+# Ignore Jupyter notebook checkpoints
+.ipynb_checkpoints/
+
+# Ignore data files
+*.csv
+*.json
+
+# Ignore macOS system files
+.DS_Store
+
+# Ignore PyCharm project settings
+.idea/
+
+# Ignore files related to testing
+.tox/
+.pytest_cache/
+
+data/
+
+.env
