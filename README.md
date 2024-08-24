@@ -16,22 +16,73 @@
 ```
 
 ## Table of Contents
-* [Overview]()
-* [Dependencies]()
-* [File Structure]()
-* [Data]()
-* [Preliminary Steps]()
-  * [AWS]()
-  * [Docker]()
-  * 
+* [Overview](#overview)
+* [Dependencies](#dependencies)
+* [File Structure](#file-structure)
+* [Data](#data)
+* [Preliminary Steps](#preliminary-steps)
+  * [AWS](#aws)
+  * [Docker](#docker)
+  * [Shiny](#shiny)
+* [Getting Started](#getting-started)
+  * [CDK](#cdk)
+  * [Shiny](#shiny-1)
+* [Deployment](#deployment)
+* [Best Practices](#best-practices)
+* [Resources](#resources)
+
+## Overview
+![](lumos_architecture.png)
+
+## Dependencies
+* AWS Account
+* Docker 
+* Python (v3.8)
+* 
+## File Structure
+```text
+.
+├── Dockerfile
+├── cdk
+│   ├── README.md
+│   ├── app.py
+│   ├── lumos
+│   │   ├── auth
+│   │   ├── compute
+│   │   ├── network
+│   │   ├── storage
+│   │   ├── tools
+│   │   └── utils
+└── shiny
+```
+
+
+## Data
 https://www.kaggle.com/datasets/maricinnamon/harry-potter-movies-dataset
 https://www.kaggle.com/datasets/electroclashh/harry-potter-dataset?resource=download&select=Spells.csv
-
 Data
 * spells
 * characters
 * places
 * dialogue
+## Preliminary Steps
+### AWS
+### Docker
+### Shiny
+## Getting Started
+### CDK
+### Shiny
+## Deployment
+## Best Practices
+CDK Best Practices 
+Separation of concerns: It allows you to manage network security separately from your application deployment.
+Reusability: You can use the same security group for multiple environments or applications if needed.
+Easier troubleshooting: It simplifies the Elastic Beanstalk stack, making it easier to identify and resolve issues.
+Flexibility: You can modify the security group independently of your Elastic Beanstalk deployments.
+## Resources
+* https://colorhunt.co/palette/8cb9bdfefbf6ecb159b67352
+
+
 
 
 ECR AWS login
@@ -50,22 +101,9 @@ ECR AWS login
 docker push ACCOUNT_ID.dkr.ecr.REGION.amazonaws.com/wisd24/lumos-shiny-application:latest
 ```
 
-Project Steps
-1. Build docker image
-2. Run docker image to verify it works
-3. Launch ECR Stack
-4. Push docker image to ECR
-5. Verify docker image is in ECR
 
-CDK Best Practices 
-Separation of concerns: It allows you to manage network security separately from your application deployment.
-Reusability: You can use the same security group for multiple environments or applications if needed.
-Easier troubleshooting: It simplifies the Elastic Beanstalk stack, making it easier to identify and resolve issues.
-Flexibility: You can modify the security group independently of your Elastic Beanstalk deployments.
 
-Shiny App Completion
-1. Add links to stuff for sidebar nav
-2. Address Todos in all analysis
-3. Add CSS and make pretty and see to add images of characters (https://colorhunt.co/palette/8cb9bdfefbf6ecb159b67352)
+
+TODO
 4. Update to read data from S3
 5. Implement CICD

@@ -4,7 +4,8 @@ from aws_cdk import (
     aws_codepipeline_actions as codepipeline_actions,
     aws_ecr as ecr,
     Stack,
-    aws_secretsmanager as sm
+    aws_secretsmanager as sm,
+    aws_iam as iam
 
 )
 
@@ -20,12 +21,20 @@ class CICDStack(Stack):
             **kwargs) -> None:
         super().__init__(scope, id, **kwargs)
 
+        role = iam.Role(
+            self,
+            'LumosCodeBuildRole',
+            assumed_by=iam.ServicePrincipal("codebuild.amazonaws.com")
+        )
+
+        role.add_managed_policy(iam.ManagedPolicy.from_aws_managed_policy_name("AmazonEC2ContainerRegistryPowerUser"))
 
 
         # Define the CodeBuild project
         codebuild_project = codebuild.PipelineProject(
             self,
             "LumosBuild",
+            role= role,
             build_spec=codebuild.BuildSpec.from_object({
                 "version": "0.2",
                 "phases": {
@@ -40,13 +49,14 @@ class CICDStack(Stack):
                     },
                     "build": {
                         "commands": [
-                            f"docker build -t {ecr_repository.repository}:latest .",
+                            'cd ..',
+                            f"docker build -t {ecr_repository.repository.repository_uri}:latest .",
                         ],
                     },
                     "post_build": {
                         "commands": [
                             f"$(aws ecr get-login --no-include-email --region {self.region})",
-                            f"docker push {ecr_repository.repository}:latest",
+                            f"docker push {ecr_repository.repository.repository_uri}:latest",
                         ],
                     },
                 },
