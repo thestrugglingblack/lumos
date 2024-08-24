@@ -28,10 +28,14 @@ class CICDStack(Stack):
             build_spec=codebuild.BuildSpec.from_object({
                 "version": "0.2",
                 "phases": {
+                    "prep":{
+                      "commands": [
+                          "pwd",
+                          "cd shiny"
+                      ]
+                    },
                     "install": {
                         "commands": [
-                            'pwd',
-                            'cd shiny',
                             "pip install -r requirements.txt",
                         ],
                     },
