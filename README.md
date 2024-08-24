@@ -38,7 +38,9 @@
 * AWS Account
 * Docker 
 * Python (v3.8)
-* 
+* Node.js (v22)
+* NVM
+
 ## File Structure
 ```text
 .
@@ -58,6 +60,7 @@
 
 
 ## Data
+
 https://www.kaggle.com/datasets/maricinnamon/harry-potter-movies-dataset
 https://www.kaggle.com/datasets/electroclashh/harry-potter-dataset?resource=download&select=Spells.csv
 Data
@@ -67,6 +70,7 @@ Data
 * dialogue
 ## Preliminary Steps
 ### AWS
+Run `nvm use` 
 ### Docker
 ### Shiny
 ## Getting Started
@@ -79,8 +83,11 @@ Separation of concerns: It allows you to manage network security separately from
 Reusability: You can use the same security group for multiple environments or applications if needed.
 Easier troubleshooting: It simplifies the Elastic Beanstalk stack, making it easier to identify and resolve issues.
 Flexibility: You can modify the security group independently of your Elastic Beanstalk deployments.
+
 ## Resources
-* https://colorhunt.co/palette/8cb9bdfefbf6ecb159b67352
+* [Color Hunt](https://colorhunt.co/palette/8cb9bdfefbf6ecb159b67352)
+* [Communicate Between R and Shiny](https://unleash-shiny.rinterface.com/shiny-intro#:~:text=In%20practice%2C%20Shiny%20does%20not,can%20produce%20a%20simple%20histogram.)
+
 
 
 
