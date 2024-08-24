@@ -1,11 +1,11 @@
 FROM rocker/shiny
-RUN apt-get update && apt-get install -y gnupg2 curl && \
-    curl -fsSL https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x871920D1991BC93C | gpg --dearmor -o /usr/share/keyrings/ubuntu-keyring-2018.gpg && \
-    echo "deb [signed-by=/usr/share/keyrings/ubuntu-keyring-2018.gpg] http://archive.ubuntu.com/ubuntu jammy main universe" > /etc/apt/sources.list.d/jammy.list && \
-    apt-get update && \
-    apt-get install -y python3-pip \
 
-RUN #apt-get update && apt-get install -y python3-pip
+RUN apt-get update && apt-get install -y gnupg2 curl
+RUN curl -fsSL https://packages.cloud.google.com/apt/doc/apt-key.gpg | gpg --dearmor -o /usr/share/keyrings/ubuntu-keyring-2018.gpg
+RUN echo "deb [signed-by=/usr/share/keyrings/ubuntu-keyring-2018.gpg] http://archive.ubuntu.com/ubuntu jammy main universe" > /etc/apt/sources.list.d/jammy.list
+RUN apt-get update && apt-get install -y python3-pip
+RUN apt-get clean && rm -rf /var/lib/apt/lists/*
+
 RUN . /etc/environment && R -e "install.packages(c('ROCR', 'gbm'), repos='$MRAN')" \
 USER shiny
 WORKDIR /srv/shiny-server

@@ -70,7 +70,13 @@ Data
 * dialogue
 ## Preliminary Steps
 ### AWS
-Run `nvm use` 
+#### Install AWS-CDK Globally
+> Note: Node.js and NVM must be installed to run this step.
+
+1. Run `nvm use` to point to Node v22.
+2. Run `npm install -g aws-cdk` to install AWS-CDK globally.
+3. Run `cdk --version` to verify that AWS-CDK installed successfully.
+
 ### Docker
 ### Shiny
 ## Getting Started
