@@ -33,6 +33,8 @@ class CICDStack(Stack):
                         "commands": [
                             "pwd",
                             "cd shiny",
+                            'pwd',
+                            'pip install --upgrade pip',
                             "pip install -r requirements.txt",
                         ],
                     },
