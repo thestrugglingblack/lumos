@@ -19,6 +19,10 @@ FROM rocker/shiny
 #    echo "deb [signed-by=/usr/share/keyrings/ubuntu-archive-keyring.gpg] http://security.ubuntu.com/ubuntu jammy-security main universe" >> /etc/apt/sources.list && \
 #    echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] http://packages.cloud.google.com/apt cloud-sdk main" > /etc/apt/sources.list.d/google-cloud-sdk.list
 
+RUN apt update
+RUN apt install debian-archive-keyring ubuntu-keyring
+
+
 # Update and install Python
 RUN apt-get update && \
     apt-get install -y python3-pip && \
