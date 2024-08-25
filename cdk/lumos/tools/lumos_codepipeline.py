@@ -40,16 +40,13 @@ class CICDStack(Stack):
                 "phases": {
                     "install": {
                         "commands": [
-                            "pwd",
-                            "cd shiny",
-                            'pwd',
-                            'pip install --upgrade pip',
-                            "pip install -r requirements.txt",
+
+                            'curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -',
+                            'apt-get update'
                         ],
                     },
                     "build": {
                         "commands": [
-                            'cd ..',
                             f"docker build -t {ecr_repository.repository.repository_uri}:latest .",
                         ],
                     },
