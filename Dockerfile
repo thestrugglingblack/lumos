@@ -20,6 +20,7 @@ FROM rocker/shiny
 #    echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] http://packages.cloud.google.com/apt cloud-sdk main" > /etc/apt/sources.list.d/google-cloud-sdk.list
 
 # RUN apt update
+RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
 RUN apt install debian-archive-keyring ubuntu-keyring
 
 
