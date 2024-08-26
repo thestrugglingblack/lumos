@@ -1,27 +1,73 @@
 {
-  "family": "FargateStackLumosTaskDefinition36BA626E",
-  "networkMode": "awsvpc",
-  "containerDefinitions": [
-    {
-      "name": "LumosContainer",
-      "image": "378737770782.dkr.ecr.us-east-1.amazonaws.com/wisd24/lumos-shiny-application",
-      "essential": true,
-      "memory": 512,
-      "cpu": 256,
-      "portMappings": [
+    "taskDefinitionArn": "arn:aws:ecs:us-east-1:378737770782:task-definition/FargateStackLumosTaskDefinition36BA626E:2",
+    "containerDefinitions": [
         {
-          "containerPort": 8000,
-          "hostPort": 8000,
-          "protocol": "tcp"
+            "name": "LumosContainer",
+            "image": "378737770782.dkr.ecr.us-east-1.amazonaws.com/wisd24/lumos-shiny-application:latest",
+            "cpu": 0,
+            "memoryReservation": 512,
+            "links": [],
+            "portMappings": [
+                {
+                    "containerPort": 8000,
+                    "hostPort": 8000,
+                    "protocol": "tcp"
+                }
+            ],
+            "essential": true,
+            "entryPoint": [],
+            "command": [],
+            "environment": [],
+            "environmentFiles": [],
+            "mountPoints": [],
+            "volumesFrom": [],
+            "secrets": [],
+            "dnsServers": [],
+            "dnsSearchDomains": [],
+            "extraHosts": [],
+            "dockerSecurityOptions": [],
+            "dockerLabels": {},
+            "ulimits": [],
+            "systemControls": [],
+            "credentialSpecs": []
         }
-      ]
-    }
-  ],
-  "requiresCompatibilities": [
-    "FARGATE"
-  ],
-  "cpu": "256",
-  "memory": "512",
-  "executionRoleArn": "arn:aws:iam::378737770782:role/ecsTaskExecutionRole",
-  "taskRoleArn": "arn:aws:iam::378737770782:role/ecsTaskExecutionRole"
+    ],
+    "family": "FargateStackLumosTaskDefinition36BA626E",
+    "taskRoleArn": "arn:aws:iam::378737770782:role/FargateStack-LumosTaskDefinitionTaskRole9AD3986B-qqGkk4s3QZJY",
+    "executionRoleArn": "arn:aws:iam::378737770782:role/FargateStack-LumosTaskDefinitionExecutionRole5E9A2F-HpbvEXbKA7hz",
+    "networkMode": "awsvpc",
+    "volumes": [],
+    "requiresAttributes": [
+        {
+            "name": "com.amazonaws.ecs.capability.ecr-auth"
+        },
+        {
+            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.17"
+        },
+        {
+            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.21"
+        },
+        {
+            "name": "com.amazonaws.ecs.capability.task-iam-role"
+        },
+        {
+            "name": "ecs.capability.execution-role-ecr-pull"
+        },
+        {
+            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.18"
+        },
+        {
+            "name": "ecs.capability.task-eni"
+        }
+    ],
+    "placementConstraints": [],
+    "compatibilities": [
+        "EC2",
+        "FARGATE"
+    ],
+    "requiresCompatibilities": [
+        "FARGATE"
+    ],
+    "cpu": "256",
+    "memory": "512"
 }

@@ -12,6 +12,12 @@ Yb,_,d88b,,_  ,d8b,  ,d8b,dP   8I   8I   Yb,d8,   ,d8,8'_   8)
  "Y8P"  "Y88888P'"Y88P"`Y8P'   8I   8I   `YP"Y8888P" P' "YY8P8P
                                                               
 ```
+<p align="center">
+![GitHub Stars](https://img.shields.io/github/stars/thestrugglingblack/lumos?style=plastic)
+![GitHub Last Commit](https://img.shields.io/github/last-commit/thestrugglingblack/lumos?style=plastic)
+![GitHub Commit Activity](https://img.shields.io/github/commit-activity/m/thestrugglingblack/lumos.svg)
+![GitHub Repository Size](https://img.shields.io/github/repo-size/thestrugglingblack/lumos?style=plastic)
+</p>
 
 ## 📍Table of Contents
 * 👋 [Overview](#overview)
@@ -31,6 +37,9 @@ Yb,_,d88b,,_  ,d8b,  ,d8b,dP   8I   8I   Yb,d8,   ,d8,8'_   8)
 
 ## 👋 Overview
 ![](lumos_architecture.png)
+[![LinkedIn Badge](https://img.shields.io/badge/LinkedIn-0077B5?style=flat&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/zuri-hunter-748ba514)
+[![Twitter Badge](https://img.shields.io/badge/Twitter-1DA1F2?style=flat&logo=twitter&logoColor=white)](https://x.com/ZuriHunter)
+[![GitHub Badge](https://img.shields.io/badge/GitHub-100000?style=flat&logo=github&logoColor=white)](https://github.com/thestrugglingblack)
 
 ## ✅ Dependencies
 * AWS Account
