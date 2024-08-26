@@ -3,9 +3,9 @@ import pandas as pd
 import plotly.express as px
 from collections import Counter, defaultdict
 
-character_df = pd.read_csv('/Users/zuri/Documents/Explore/lumos/data/characters.csv')
-dialogue_df = pd.read_csv('/Users/zuri/Documents/Explore/lumos/data/dialogue.csv')
-spells_df = pd.read_csv('/Users/zuri/Documents/Explore/lumos/data/spells.csv')
+character_df = pd.read_csv('./data/characters.csv')
+dialogue_df = pd.read_csv('./data/dialogue.csv')
+spells_df = pd.read_csv('./data/spells.csv')
 
 def spell_used_the_most():
     dialogues = dialogue_df['Dialogue'].dropna().tolist()

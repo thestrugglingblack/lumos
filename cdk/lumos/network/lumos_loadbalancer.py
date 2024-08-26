@@ -35,3 +35,10 @@ class LoadBalancerStack(Stack):
             port=80,
             open=True
         )
+
+        CfnOutput(
+            self,
+            'LumosLoadBalancerARN',
+            value=self.load_balancer.load_balancer_arn,
+            export_name='LumosLoadBalancerARN'
+        )

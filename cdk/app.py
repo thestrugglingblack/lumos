@@ -11,6 +11,7 @@ from lumos.compute.lumos_fargate import FargateStack
 from lumos.network.lumos_loadbalancer import LoadBalancerStack
 from lumos.tools.lumos_codepipeline import CICDStack
 from lumos.auth.lumos_secrets import SecretsStack
+from lumos.network.lumos_dns import DNSStack
 
 load_dotenv('../.env')
 
@@ -53,6 +54,13 @@ loadbalancer_stack = LoadBalancerStack(
     "LoadBalancerStack",
     security_group=securitygroup_stack.security_group,
     vpc=securitygroup_stack.vpc,
+    env=cdk.Environment(account=account_id, region='us-east-1')
+)
+
+dns_stack = DNSStack(
+    app,
+    'DNSStack',
+    load_balancer=loadbalancer_stack,
     env=cdk.Environment(account=account_id, region='us-east-1')
 )
 

@@ -6,8 +6,8 @@ from io import BytesIO
 import base64
 import random
 
-dialogue_df = pd.read_csv('/Users/zuri/Documents/Explore/lumos/data/dialogue.csv')
-character_df = pd.read_csv('/Users/zuri/Documents/Explore/lumos/data/characters.csv')
+dialogue_df = pd.read_csv('./data/dialogue.csv')
+character_df = pd.read_csv('./data/characters.csv')
 
 
 def dialogue_per_character_chart():

@@ -1,22 +1,6 @@
-FROM rocker/r-ver:4.3.1
-
-RUN apt-get update && apt-get install -y \
-     apt-utils \
-     curl \
-     libcurl4-openssl-dev \
-    && rm -rf \
-       /var/lib/apt/lists/*   \
-       /tmp/download_packages
-
-# Update and install Python
-RUN apt-get update && \
-    apt-get install -y python3-pip && \
-    apt-get clean && \
-    rm -rf /var/lib/apt/lists/*
-
-# Install R packages
-RUN . /etc/environment && R -e "install.packages(c('ROCR', 'gbm'), repos='$MRAN')"
-
+FROM rocker/shiny
+RUN apt-get update && apt-get install -y python3-pip
+RUN . /etc/environment && R -e "install.packages(c('ROCR', 'gbm'), repos='$MRAN')" \
 USER shiny
 WORKDIR /srv/shiny-server
 COPY shiny/requirements.txt /srv/shiny-server/

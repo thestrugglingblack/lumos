@@ -1,3 +1,5 @@
+from pathlib import Path
+
 import plotly.express as px
 from shiny.express import render, ui
 from shinywidgets import render_plotly
@@ -6,7 +8,13 @@ from analysis.characters import house_count_chart, gender_count_chart
 from analysis.dialogue import dialogue_per_character_chart, wordcloud
 from analysis.places import places_frequently_mentioned, character_place_association
 from analysis.spells import spell_used_the_most, character_most_used_spell
-from pathlib import Path
+from analysis.utils import download_files
+
+
+try:
+    download_files()
+except Exception as e:
+    print(f'Error downloading data: {e}')
 
 tips = px.data.tips()
 

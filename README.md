@@ -120,3 +120,5 @@ docker push ACCOUNT_ID.dkr.ecr.REGION.amazonaws.com/wisd24/lumos-shiny-applicati
 TODO
 4. Update to read data from S3
 5. Implement CICD
+6. Setup Logs for container
+7. Clean up documentation

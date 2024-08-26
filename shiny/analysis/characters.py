@@ -1,7 +1,7 @@
 import pandas as pd
 import plotly.express as px
 
-characters_df = pd.read_csv('/Users/zuri/Documents/Explore/lumos/data/characters.csv')
+characters_df = pd.read_csv('./data/characters.csv')
 characters_df.columns = characters_df.columns.str.strip()
 
 

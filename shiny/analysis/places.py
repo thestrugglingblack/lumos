@@ -3,9 +3,9 @@ import plotly.express as px
 import pandas as pd
 
 
-places_df = pd.read_csv('/Users/zuri/Documents/Explore/lumos/data/places.csv')
-character_df = pd.read_csv('/Users/zuri/Documents/Explore/lumos/data/characters.csv')
-dialogue_df = pd.read_csv('/Users/zuri/Documents/Explore/lumos/data/dialogue.csv')
+places_df = pd.read_csv('./data/places.csv')
+character_df = pd.read_csv('./data/characters.csv')
+dialogue_df = pd.read_csv('./data/dialogue.csv')
 
 
 def places_frequently_mentioned():
