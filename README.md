@@ -13,7 +13,7 @@ Yb,_,d88b,,_  ,d8b,  ,d8b,dP   8I   8I   Yb,d8,   ,d8,8'_   8)
                                                               
 ```
 
-## Table of Contents
+## 📍Table of Contents
 * [Overview](#overview)
 * [Dependencies](#dependencies)
 * [File Structure](#file-structure)
@@ -32,14 +32,14 @@ Yb,_,d88b,,_  ,d8b,  ,d8b,dP   8I   8I   Yb,d8,   ,d8,8'_   8)
 ## Overview
 ![](lumos_architecture.png)
 
-## Dependencies
+## ✅ Dependencies
 * AWS Account
 * Docker 
 * Python (v3.8)
 * Node.js (v22)
 * NVM
 
-## File Structure
+## 🌵 File Structure
 ```text
 .
 ├── Dockerfile
@@ -57,7 +57,7 @@ Yb,_,d88b,,_  ,d8b,  ,d8b,dP   8I   8I   Yb,d8,   ,d8,8'_   8)
 ```
 
 
-## Data
+## 💾 Data
 
 https://www.kaggle.com/datasets/maricinnamon/harry-potter-movies-dataset
 https://www.kaggle.com/datasets/electroclashh/harry-potter-dataset?resource=download&select=Spells.csv
@@ -77,7 +77,7 @@ Data
 
 ### Docker
 ### Shiny
-## Getting Started
+## 🚀 Getting Started
 ### CDK
 ### Shiny
 ## Deployment

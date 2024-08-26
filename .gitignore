@@ -21,7 +21,6 @@ venv/
 
 # Ignore data files
 *.csv
-*.json
 
 # Ignore macOS system files
 .DS_Store

@@ -1,0 +1,27 @@
+{
+  "family": "FargateStackLumosTaskDefinition36BA626E",
+  "networkMode": "awsvpc",
+  "containerDefinitions": [
+    {
+      "name": "wisd24/lumos-shiny-application",
+      "image": "378737770782.dkr.ecr.us-east-1.amazonaws.com/wisd24/lumos-shiny-application",
+      "essential": true,
+      "memory": 512,
+      "cpu": 256,
+      "portMappings": [
+        {
+          "containerPort": 8000,
+          "hostPort": 80,
+          "protocol": "tcp"
+        }
+      ]
+    }
+  ],
+  "requiresCompatibilities": [
+    "FARGATE"
+  ],
+  "cpu": "256",
+  "memory": "512",
+  "executionRoleArn": "arn:aws:iam::378737770782:role/ecsTaskExecutionRole",
+  "taskRoleArn": "arn:aws:iam::378737770782:role/ecsTaskExecutionRole"
+}
