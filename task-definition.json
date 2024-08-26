@@ -3,7 +3,7 @@
   "networkMode": "awsvpc",
   "containerDefinitions": [
     {
-      "name": "wisd24/lumos-shiny-application",
+      "name": "LumosContainer",
       "image": "378737770782.dkr.ecr.us-east-1.amazonaws.com/wisd24/lumos-shiny-application",
       "essential": true,
       "memory": 512,

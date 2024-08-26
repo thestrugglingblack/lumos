@@ -14,22 +14,22 @@ Yb,_,d88b,,_  ,d8b,  ,d8b,dP   8I   8I   Yb,d8,   ,d8,8'_   8)
 ```
 
 ## 📍Table of Contents
-* [Overview](#overview)
-* [Dependencies](#dependencies)
-* [File Structure](#file-structure)
-* [Data](#data)
-* [Preliminary Steps](#preliminary-steps)
+* 👋 [Overview](#overview)
+* ✅ [Dependencies](#dependencies)
+* 🌵 [File Structure](#file-structure)
+* 💾 [Data](#data)
+* 🏃 [Preliminary Steps](#preliminary-steps)
   * [AWS](#aws)
   * [Docker](#docker)
   * [Shiny](#shiny)
-* [Getting Started](#getting-started)
+* 🚀 [Getting Started](#getting-started)
   * [CDK](#cdk)
   * [Shiny](#shiny-1)
-* [Deployment](#deployment)
-* [Best Practices](#best-practices)
-* [Resources](#resources)
+* 🛠 [Deployment](#deployment)
+* 🔑 [Best Practices](#best-practices)
+* 📑 [Resources](#resources)
 
-## Overview
+## 👋 Overview
 ![](lumos_architecture.png)
 
 ## ✅ Dependencies
@@ -58,15 +58,10 @@ Yb,_,d88b,,_  ,d8b,  ,d8b,dP   8I   8I   Yb,d8,   ,d8,8'_   8)
 
 
 ## 💾 Data
+The Lumos application uses data from these two free Kaggle Data sets: [Harry Potter Movies Dataset](https://www.kaggle.com/datasets/maricinnamon/harry-potter-movies-dataset) and [Harry Potter Dataset Spells](https://www.kaggle.com/datasets/electroclashh/harry-potter-dataset?resource=download&select=Spells.csv)
+The data consist of the entire script, characters, places and spells for all of 8 movies of the Harry Potter series. 
 
-https://www.kaggle.com/datasets/maricinnamon/harry-potter-movies-dataset
-https://www.kaggle.com/datasets/electroclashh/harry-potter-dataset?resource=download&select=Spells.csv
-Data
-* spells
-* characters
-* places
-* dialogue
-## Preliminary Steps
+##  🏃 Preliminary Steps
 ### AWS
 #### Install AWS-CDK Globally
 > Note: Node.js and NVM must be installed to run this step.
@@ -80,15 +75,15 @@ Data
 ## 🚀 Getting Started
 ### CDK
 ### Shiny
-## Deployment
-## Best Practices
+## 🛠 Deployment
+## 🔑 Best Practices
 CDK Best Practices 
 Separation of concerns: It allows you to manage network security separately from your application deployment.
 Reusability: You can use the same security group for multiple environments or applications if needed.
 Easier troubleshooting: It simplifies the Elastic Beanstalk stack, making it easier to identify and resolve issues.
 Flexibility: You can modify the security group independently of your Elastic Beanstalk deployments.
 
-## Resources
+## 📑 Resources
 * [Color Hunt](https://colorhunt.co/palette/8cb9bdfefbf6ecb159b67352)
 * [Communicate Between R and Shiny](https://unleash-shiny.rinterface.com/shiny-intro#:~:text=In%20practice%2C%20Shiny%20does%20not,can%20produce%20a%20simple%20histogram.)
 
