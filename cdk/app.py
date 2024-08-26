@@ -9,8 +9,6 @@ from lumos.storage.lumos_s3 import S3Stack
 from lumos.network.lumos_securtygroup import SecurityGroupStack
 from lumos.compute.lumos_fargate import FargateStack
 from lumos.network.lumos_loadbalancer import LoadBalancerStack
-from lumos.tools.lumos_codepipeline import CICDStack
-from lumos.auth.lumos_secrets import SecretsStack
 from lumos.network.lumos_dns import DNSStack
 
 load_dotenv('../.env')
@@ -19,22 +17,10 @@ account_id = os.getenv('AWS_ID')
 
 app = cdk.App()
 
-secrets_stack = SecretsStack(
-    app,
-    'SecretStack',
-    env=cdk.Environment(account=account_id, region='us-east-1')
-)
 ecr_stack = EcrStack(
     app,
     "EcrStack",
     env=cdk.Environment(account=account_id, region='us-east-1')
-)
-
-cicd_stack = CICDStack(
-    app,
-    'CICDStack',
-    ecr_repository=ecr_stack,
-    secrets= secrets_stack.gh_token
 )
 
 s3_stack = S3Stack(
