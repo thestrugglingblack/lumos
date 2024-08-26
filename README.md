@@ -12,7 +12,9 @@ Yb,_,d88b,,_  ,d8b,  ,d8b,dP   8I   8I   Yb,d8,   ,d8,8'_   8)
  "Y8P"  "Y88888P'"Y88P"`Y8P'   8I   8I   `YP"Y8888P" P' "YY8P8P
                                                               
 ```
+
 <p align="center">
+
 ![GitHub Stars](https://img.shields.io/github/stars/thestrugglingblack/lumos?style=plastic)
 ![GitHub Last Commit](https://img.shields.io/github/last-commit/thestrugglingblack/lumos?style=plastic)
 ![GitHub Commit Activity](https://img.shields.io/github/commit-activity/m/thestrugglingblack/lumos.svg)
@@ -67,7 +69,7 @@ Yb,_,d88b,,_  ,d8b,  ,d8b,dP   8I   8I   Yb,d8,   ,d8,8'_   8)
 
 
 ## 💾 Data
-The Lumos application uses data from these two free Kaggle Data sets: [Harry Potter Movies Dataset](https://www.kaggle.com/datasets/maricinnamon/harry-potter-movies-dataset) and [Harry Potter Dataset Spells](https://www.kaggle.com/datasets/electroclashh/harry-potter-dataset?resource=download&select=Spells.csv)
+The Lumos application uses data from these two free Kaggle Datasets: [Harry Potter Movies Dataset](https://www.kaggle.com/datasets/maricinnamon/harry-potter-movies-dataset) and [Harry Potter Dataset Spells](https://www.kaggle.com/datasets/electroclashh/harry-potter-dataset?resource=download&select=Spells.csv)
 The data consist of the entire script, characters, places and spells for all of 8 movies of the Harry Potter series. 
 
 ##  🏃 Preliminary Steps
@@ -83,6 +85,10 @@ The data consist of the entire script, characters, places and spells for all of 
 #### Configure AWS Account Permissions
 
 #### Create .env file
+1. Create a file called `.env` at the root of the directory.
+2. Copy the contents of `.env.template` into the newly created `.env` file.
+3. Add your `AWS_ACCOUNT_ID` to the `.env.` This is needed for aws-cdk to know which AWS account to deploy resources to.
+
 ### Docker
 ### Shiny
 ## 🚀 Getting Started
@@ -91,8 +97,36 @@ The data consist of the entire script, characters, places and spells for all of 
 ### Shiny
 To run the application on local machine
 
+
 To run the application with Docker
 ## 🛠 Deployment
+There are series of steps for deploying this application. The first step is establishing the base resources before placing the application in its environment.
+
+Deploy the that is going to hold all version of the Lumos application Docker images: Elastic Container Registry (ECR). 
+```bash
+$ cdk deploy EcrStack
+```
+> Note: This is a command that will only need to ran once.
+
+Deploy the storage layer, this is where the Lumos application will know where to download the `*.csv` files to run analysis.
+```bash
+$ cdk deploy S3Stack
+```
+
+Deploy the network layer, where the VPC, Security groups and Application Load Balancers are created.
+
+```bash
+$ cdk deploy SecurityGroupStack
+$ cdk deploy LoadBalancerStack
+````
+
+Finally deploy the compute layer which is placing a Fargate EC2 instance within an Elastic Container Service cluster (ECS).
+```bash
+$ cdk deploy FargateServiceStack
+```
+
+To destroy any of the stacks created run `cdk destroy NAME_OF_STACK`, this will remove the stack from the Lumos application architecture on AWS. 
+
 ## 🔑 Best Practices
 CDK Best Practices 
 Separation of concerns: It allows you to manage network security separately from your application deployment.

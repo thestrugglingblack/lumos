@@ -35,3 +35,5 @@ venv/
 data/
 
 .env
+
+cdk/cdk.context.json
