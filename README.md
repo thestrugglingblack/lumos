@@ -71,6 +71,7 @@ The Lumos application uses data from these two free Kaggle Data sets: [Harry Pot
 The data consist of the entire script, characters, places and spells for all of 8 movies of the Harry Potter series. 
 
 ##  🏃 Preliminary Steps
+
 ### AWS
 #### Install AWS-CDK Globally
 > Note: Node.js and NVM must be installed to run this step.
@@ -79,11 +80,18 @@ The data consist of the entire script, characters, places and spells for all of 
 2. Run `npm install -g aws-cdk` to install AWS-CDK globally.
 3. Run `cdk --version` to verify that AWS-CDK installed successfully.
 
+#### Configure AWS Account Permissions
+
+#### Create .env file
 ### Docker
 ### Shiny
 ## 🚀 Getting Started
 ### CDK
+
 ### Shiny
+To run the application on local machine
+
+To run the application with Docker
 ## 🛠 Deployment
 ## 🔑 Best Practices
 CDK Best Practices 

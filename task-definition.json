@@ -1,5 +1,4 @@
 {
-    "taskDefinitionArn": "arn:aws:ecs:us-east-1:378737770782:task-definition/FargateStackLumosTaskDefinition36BA626E:2",
     "containerDefinitions": [
         {
             "name": "LumosContainer",
