@@ -32,8 +32,8 @@
         }
     ],
     "family": "FargateStackLumosTaskDefinition36BA626E",
-    "taskRoleArn": "arn:aws:iam::378737770782:role/FargateStack-LumosTaskDefinitionTaskRole9AD3986B-qqGkk4s3QZJY",
-    "executionRoleArn": "arn:aws:iam::378737770782:role/FargateStack-LumosTaskDefinitionExecutionRole5E9A2F-HpbvEXbKA7hz",
+    "taskRoleArn": "arn:aws:iam::378737770782:role/FargateStack-LumosTaskDefinitionTaskRole9AD3986B-YZPFsFUmyNrD",
+    "executionRoleArn": "arn:aws:iam::378737770782:role/FargateStack-LumosTaskDefinitionExecutionRole5E9A2F-pswr0C5Vrb91",
     "networkMode": "awsvpc",
     "volumes": [],
     "requiresAttributes": [
