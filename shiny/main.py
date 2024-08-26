@@ -8,7 +8,7 @@ from analysis.characters import house_count_chart, gender_count_chart
 from analysis.dialogue import dialogue_per_character_chart, wordcloud
 from analysis.places import places_frequently_mentioned, character_place_association
 from analysis.spells import spell_used_the_most, character_most_used_spell
-from analysis.utils import download_files
+from analysis.utils.util import download_files
 
 
 try:
