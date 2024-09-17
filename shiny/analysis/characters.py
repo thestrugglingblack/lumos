@@ -1,12 +1,10 @@
 import pandas as pd
 import plotly.express as px
 
-characters_df = pd.read_csv('./data/characters.csv')
-characters_df.columns = characters_df.columns.str.strip()
-
-
-
 def house_count_chart():
+    characters_df = pd.read_csv('./data/characters.csv')
+    characters_df.columns = characters_df.columns.str.strip()
+
     filtered_df = characters_df[~characters_df['House'].isin(['Beauxbatons Academy of Magic', 'Durmstrang Institute'])]
     house_counts = filtered_df['House'].value_counts().reset_index()
     house_counts.columns = ['House', 'Number of Characters']
@@ -22,8 +20,8 @@ def house_count_chart():
                  x='House',
                  y='Number of Characters',
                  title='Characters By House',
-                 color='House',  # Use the 'House' column to determine the color
-                 color_discrete_map=color_mapping  # Apply the custom color mapping
+                 color='House',
+                 color_discrete_map=color_mapping
                  )
 
     icons = {
@@ -60,13 +58,15 @@ def house_count_chart():
         yaxis=dict(range=[0, y_range]),
         autosize=True,
         width=None,
-        height=800,
+        height=600,
         template='plotly_white',
         margin=dict(l=20, r=20, t=100, b=50)
     )
     return fig
 
 def gender_count_chart():
+    characters_df = pd.read_csv('./data/characters.csv')
+    characters_df.columns = characters_df.columns.str.strip()
     filtered_df = characters_df[characters_df['Gender'] != 'Human']
     gender_counts = filtered_df['Gender'].value_counts().reset_index()
     gender_counts.columns = ['Gender', 'Count']

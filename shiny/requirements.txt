@@ -4,3 +4,4 @@ pandas>=1.3.5
 shinywidgets
 boto3
 wordcloud
+python-dotenv>=0.15.0,<1.0.0

@@ -3,14 +3,13 @@ import plotly.express as px
 from wordcloud import WordCloud
 import matplotlib.pyplot as plt
 from io import BytesIO
-import base64
 import random
-
-dialogue_df = pd.read_csv('./data/dialogue.csv')
-character_df = pd.read_csv('./data/characters.csv')
+from pathlib import Path
 
 
 def dialogue_per_character_chart():
+    dialogue_df = pd.read_csv('./data/dialogue.csv')
+    character_df = pd.read_csv('./data/characters.csv')
     merge_dialogue_character_df = dialogue_df.merge(character_df[['Character ID', 'Character Name']], on='Character ID', how='left')
     dialogue_counts = merge_dialogue_character_df.groupby('Character Name').size().reset_index(name='Number of Dialogues')
     dialogue_counts = dialogue_counts[dialogue_counts['Number of Dialogues'] >= 40]
@@ -43,6 +42,10 @@ def dialogue_per_character_chart():
     return fig
 
 def wordcloud():
+    www_dir = Path("www")
+    www_dir.mkdir(exist_ok=True)
+
+    dialogue_df = pd.read_csv('./data/dialogue.csv')
     all_dialogues = ' '.join(dialogue_df['Dialogue'].dropna())
     colors = ['#ae0001', '#ecb939', '#222f5b', '#2a623d']
 
@@ -64,11 +67,12 @@ def wordcloud():
     plt.imshow(wordcloud, interpolation='bilinear')
     plt.axis('off')
 
-    plt.title('Word Cloud', fontdict={'family': 'Space Mono', 'color': '#B67352', 'size': 30}, pad=20)
+    plt.title('Word Cloud', fontdict={ 'color': '#B67352', 'size': 30}, pad=20)
+    image_path = www_dir / "wordcloud.png"
 
-    plt.savefig(img, format='png', bbox_inches='tight', pad_inches=0.5)
+    plt.savefig(image_path, format='png', bbox_inches='tight', pad_inches=0.5)
     plt.close()
     img.seek(0)
-    wc_img = base64.b64encode(img.read()).decode('utf-8')
 
-    return wc_img
+    return 'wordcloud.png'
+

@@ -3,12 +3,14 @@ import plotly.express as px
 import pandas as pd
 
 
-places_df = pd.read_csv('./data/places.csv')
-character_df = pd.read_csv('./data/characters.csv')
-dialogue_df = pd.read_csv('./data/dialogue.csv')
+
 
 
 def places_frequently_mentioned():
+    places_df = pd.read_csv('./data/places.csv')
+    character_df = pd.read_csv('./data/characters.csv')
+    dialogue_df = pd.read_csv('./data/dialogue.csv')
+
     merged_df = dialogue_df.merge(places_df, on='Place ID', how='left')
     merged_df = merged_df.merge(character_df, on='Character ID', how='left')
 
@@ -56,6 +58,10 @@ def places_frequently_mentioned():
     return fig
 
 def character_place_association():
+    places_df = pd.read_csv('./data/places.csv')
+    character_df = pd.read_csv('./data/characters.csv')
+    dialogue_df = pd.read_csv('./data/dialogue.csv')
+
     merged_df = dialogue_df.merge(places_df, on='Place ID', how='left')
     merged_df = merged_df.merge(character_df, on='Character ID', how='left')
     association_counts = merged_df.groupby(['Place Name', 'Character Name']).size().reset_index(name='Count')

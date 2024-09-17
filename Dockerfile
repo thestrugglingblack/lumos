@@ -6,7 +6,6 @@ WORKDIR /srv/shiny-server
 COPY shiny/requirements.txt /srv/shiny-server/
 RUN pip install --no-cache-dir -r requirements.txt
 COPY shiny /srv/shiny-server
+COPY .env /srv/shiny-server/
 EXPOSE 8000
-RUN ls -la /srv/shiny-server
-
 CMD ["shiny", "run", "--host", "0.0.0.0", "--port", "8000", "main.py"]
