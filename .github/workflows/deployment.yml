@@ -25,6 +25,10 @@ jobs:
         id: login-ecr
         uses: aws-actions/amazon-ecr-login@v1
 
+      - name: Create ENV file
+        run: |
+          echo "AWS_S3_BUCKET=${{ secrets.AWS_S3_BUCKET }}" >> .env
+
       - name: Build Tag Push Docker Image
         id: build-image
         env:
