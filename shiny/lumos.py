@@ -66,7 +66,7 @@ app_ui = ui.page_navbar(
         ui.markdown(
             "<p>Lumos is a Shiny Python application that does basic text analysis on the Harry Potter series. Its entire stack is deployed on AWS using Amazon Cloud Development kit (aws-cdk). You can learn more about Shiny Python and AWS-CDK in the links below.</p>"
         ),
-        ui.markdown("[Slides](www.google.com)"),
+        ui.markdown("[Slides](https://github.com/thestrugglingblack/lumos/blob/main/Illuminate%20Your%20Data%20-%20Shiny%20%2B%20CDK%20Deployments.pdf)"),
         ui.markdown("[GitHub](https://github.com/thestrugglingblack/lumos)"),
         ui.markdown("[Speaker](https://github.com/thestrugglingblack)")
     ),
