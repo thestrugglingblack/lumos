@@ -92,7 +92,7 @@ The data consist of the entire script, characters, places and spells for all of 
 
 ### AWS
 #### Install AWS-CDK Globally
-> Note: Node.js and NVM must be installed to run this step.
+> Note 📄: Node.js and NVM must be installed to run this step.
 
 1. Run `nvm use` to point to Node v22.
 2. Run `npm install -g aws-cdk` to install AWS-CDK globally.
@@ -108,21 +108,37 @@ The data consist of the entire script, characters, places and spells for all of 
 2. Copy the contents of `.env.template` into the newly created `.env` file.
 3. Add your `AWS_ACCOUNT_ID` to the `.env.` This is needed for aws-cdk to know which AWS account to deploy resources to.
 
-
-### Docker
 ### Shiny
+1. Switch to the application directory `cd shiny`.
+2. Setup the virtual environment `python -m venv .venv`.
+3. Activate the virtual environment `source .venv/bin/activate`.
+4. Install project dependencies `pip install -r requirements.txt`
 
 ## 🚀 Getting Started
 ### CDK
+To modify the current changes in the CDK directory.
 
 ### Docker
-To run the application via Docker.
+To run the application via Docker complete the following:
+
+1. Verify that Docker daemon is up and running.
+2. Build the docker image `docker build -t wisd24/lumos-shiny-application  .`
+> Info 📓: -t is short for --tag and this can be replaced with whatever name you wish to give the image. '.' is the path to the Docker image. In this case, this command must be ran at the root of the repository where the "Dockerfile" is located.
+3. Run the image into a Docker container
+```bash
+docker run -e AWS_ACCESS_KEY_ID=YOUR_ACCESS_KEY -e AWS_SECRET_ACCESS_KEY=YOUR_SECRET_KEY -p 8000:8000  wisd24/lumos-shiny-application
+```
+4. Go to http://localhost:8000
 
 ### Shiny
-To run the application on local machine
+To run the application on local machine complete the following:
 
+1. Switch to application directory `cd shiny`.
+2. Run the application `shiny run --host 0.0.0.0 --port 8000 main.py`
+3. Go to http://localhost:8000
 
-To run the application with Docker
+> Note 📄: You will need to set your AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY in your terminal in order for the application to pulldown data from S3 bucket.
+
 
 ## 🛠 Deployment
 ### AWS Stack Deployment
@@ -148,7 +164,7 @@ $ cdk deploy LoadBalancerStack
 
 4. Finally deploy the compute layer which is placing a Fargate EC2 instance within an Elastic Container Service cluster (ECS).
 ```bash
-$ cdk deploy FargateServiceStack
+$ cdk deploy FargateStack
 ```
 
 To destroy any of the stacks created run `cdk destroy NAME_OF_STACK`, this will remove the stack from the Lumos application architecture on AWS. 

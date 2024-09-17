@@ -4,6 +4,7 @@ from aws_cdk import (
     aws_ecr as ecr,
     aws_s3 as s3,
     aws_logs as logs,
+    aws_iam as iam,
     Stack,
     CfnOutput,
     RemovalPolicy
@@ -22,6 +23,14 @@ class FargateStack(Stack):
             s3_bucket: s3.IBucket, **kwargs) -> None:
         super().__init__(scope, id, **kwargs)
 
+        log_policy = iam.PolicyStatement(
+            actions=[
+                "logs:CreateLogStream",
+                "logs:PutLogEvents"
+            ],
+            resources=[ecr_repository.repository_arn],
+            effect=iam.Effect.ALLOW
+        )
 
         log_group = logs.LogGroup(
             self,
@@ -43,6 +52,8 @@ class FargateStack(Stack):
             cpu=256,
             memory_limit_mib=512
         )
+
+        task_definition.task_role.add_to_policy(log_policy)
 
         lumos_docker_image = ecs.ContainerImage.from_ecr_repository(
             repository=ecr_repository,
